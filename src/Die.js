@@ -8,10 +8,12 @@ class Die extends Component {
   }
   
   render() {
-    const bgColor = this.props.locked ? "grey" : "black";
+    const { isDisabled, locked } = this.props;
+    const bgColor = locked ? "grey" : "black";
     return (
       <button
         className="Die"
+        disabled={isDisabled}
         style={{ backgroundColor: bgColor }}
         onClick={this.handleClick}
       >

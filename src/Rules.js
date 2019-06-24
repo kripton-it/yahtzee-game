@@ -70,13 +70,16 @@ class FullHouse extends Rule {
 class SmallStraight extends Rule {
   evalRoll = dice => {
     const d = new Set(dice);
-    if (d.size < 4) return 0;
+    /*if (d.size < 4) return 0;
     if (d.size === 5 && d.has(3) && d.has(4)) return this.score;
     return (!d.has(1) && !d.has(2)) ||
       (!d.has(1) && !d.has(6)) ||
       (!d.has(5) && !d.has(6))
       ? this.score
-      : 0;
+      : 0;*/
+    return (d.has(3) && d.has(4) && (
+      (d.has(1) && d.has(2)) || (d.has(2) && d.has(5)) || (d.has(5) && d.has(6))
+    )) ? this.score : 0;
   };
 }
 
