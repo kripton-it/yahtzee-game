@@ -27,7 +27,8 @@ h2 {
   align-items: center;
 }
 
-.Game-reroll {
+.Game-reroll,
+.Game-restart {
   font-size: 2em;
   color: white;
   font-weight: 100;
@@ -42,12 +43,17 @@ h2 {
   );
   border-radius: 0.5rem;
   border: none;
-  width: 50%;
+  width: 60%;
 
   margin-bottom: 2rem;
 }
 
-.Game-reroll:hover {
+.Game-restart {
+  margin-top: 2rem;
+}
+
+.Game-reroll:hover,
+.Game-restart:hover {
   cursor: pointer;
   background-position: right center;
 }
