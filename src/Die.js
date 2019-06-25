@@ -3,18 +3,25 @@ import "./Die.css";
 
 class Die extends Component {
   static defaultProps = {
-    words: ['one', 'two', 'three', 'four', 'five', 'six'],
+    words: ["one", "two", "three", "four", "five", "six"],
+    val: 6
   };
 
   handleClick = () => {
     const { handleClick, idx } = this.props;
     handleClick(idx);
-  }
-  
+  };
+
   render() {
-    const { isDisabled, locked, val, words } = this.props;
+    const { locked, val, words, rolling } = this.props;
+    const className = `Die fas fa-dice-${words[val - 1]} fa-5x${
+      locked ? " Die-locked" : rolling ? " Die-rolling" : ""
+    }`;
     return (
-      <i className={`Die fas fa-dice-${words[val - 1]} fa-5x${locked ? ' Die-locked' : ''}`} onClick={this.handleClick} disabled={isDisabled}></i>
+      <i
+        className={className}
+        onClick={this.handleClick}
+      />
     );
   }
 }
