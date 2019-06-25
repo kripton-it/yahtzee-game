@@ -2,23 +2,19 @@ import React, { Component } from "react";
 import "./Die.css";
 
 class Die extends Component {
+  static defaultProps = {
+    words: ['one', 'two', 'three', 'four', 'five', 'six'],
+  };
+
   handleClick = () => {
     const { handleClick, idx } = this.props;
     handleClick(idx);
   }
   
   render() {
-    const { isDisabled, locked } = this.props;
-    const bgColor = locked ? "grey" : "black";
+    const { isDisabled, locked, val, words } = this.props;
     return (
-      <button
-        className="Die"
-        disabled={isDisabled}
-        style={{ backgroundColor: bgColor }}
-        onClick={this.handleClick}
-      >
-        {this.props.val}
-      </button>
+      <i className={`Die fas fa-dice-${words[val - 1]} fa-5x${locked ? ' Die-locked' : ''}`} onClick={this.handleClick} disabled={isDisabled}></i>
     );
   }
 }

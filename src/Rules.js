@@ -112,18 +112,18 @@ const fives = new TotalOneNumber({ val: 5, description: "Score 5 for every 5"});
 const sixes = new TotalOneNumber({ val: 6, description: "Score 6 for every 6"});
 
 // three/four of kind score as sum of all dice
-const threeOfKind = new SumDistro({ count: 3, description: "If 3+ of one value, score sum of all dice (otherwise, score 0)"});
-const fourOfKind = new SumDistro({ count: 4, description: "If 4+ of one value, score sum of all dice (else 0)"});
+const threeOfKind = new SumDistro({ count: 3, description: "Sum all dice if 3 are the same"});
+const fourOfKind = new SumDistro({ count: 4, description: "Sum all dice if 4 are the same"});
 
 // full house scores as flat 25
-const fullHouse = new FullHouse({ score: 25, description: "If 3 of one value and 2 of another, score 25 (else 0)"});
+const fullHouse = new FullHouse({ score: 25, description: "25 points for a full house"});
 
 // small/large straights score as 30/40
-const smallStraight = new SmallStraight({ score: 30, description: "If 4+ values in a row, score 30 (else 0)"});
-const largeStraight = new LargeStraight({ score: 40, description: "If 5 values in a row, score 40 (else 0)"});
+const smallStraight = new SmallStraight({ score: 30, description: "30 points for a small straight"});
+const largeStraight = new LargeStraight({ score: 40, description: "40 points for a large straight"});
 
 // yahtzee scores as 50
-const yahtzee = new Yahtzee({ score: 50, description: "If all values match, score 50 (else 0)"});
+const yahtzee = new Yahtzee({ score: 50, description: "50 points for yahtzee"});
 
 // for chance, can view as some of all dice, requiring at least 0 of a kind
 const chance = new SumDistro({ count: 0, description: "Score sum of all dice"});
